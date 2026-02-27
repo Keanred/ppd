@@ -1,4 +1,5 @@
-import { startREPL } from "./repl";
+import { startREPL } from "./repl.js";
+
 function main() {
   startREPL();
 }
