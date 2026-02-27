@@ -1,12 +1,10 @@
-import { getCommands } from './repl.js';
+import type { State } from "./state.js";
 
-export function commandHelp() {
-  console.log('Welcome to the Pokedex!');
-  console.log('Usage:\n\n');
+export async function commandHelp(state: State) {
+  console.log("Welcome to the Pokedex!");
+  console.log("Usage:\n\n");
 
-  const commands = getCommands();
-
-  for (const command in commands) {
-    console.log(`${command}: ${commands[command].description}`);
+  for (const command in state.commands) {
+    console.log(`${command}: ${state.commands[command].description}`);
   }
 }
