@@ -17,7 +17,7 @@ export function startREPL(state: State) {
     }
     if (userInput[0] in state.commands) {
       try {
-        await state.commands[userInput[0]].callback(state);
+        await state.commands[userInput[0]].callback(state, userInput[1] || "");
       } catch (error) {
         console.error(`Error executing command: ${error}`);
       }
